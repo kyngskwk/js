@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>AXIOS 문법</h1>
+  <script>
+    axios.get('https://koreanjson.com/posts/1')
+      .then(response =>  {
+        console.log(response.data)
+        return response.data
+      })
+      .then(data => {
+        console.log(data)
+        return data.content
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  </script>
+</body>
+</html>

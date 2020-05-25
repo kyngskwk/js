@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <p>복사금지! 불펌금지!</p> 
+  <script>
+    document.addEventListener('copy', function() {
+      // 원래 하려고  하는거 못하게 할거고
+      event.preventDefault()
+      // 이런거 대신 동작시킬거야!
+      alert('불펌금지. 철컹철컹')
+    })
+  </script> 
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <a v-bind:href="googleUrl">Google Link</a>
+    <a v-bind:href="naverUrl">Naver Link</a>
+    <img v-bind:src="randomImageUrl" alt="random-image">
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        googleUrl: 'https://google.com', 
+        naverUrl: 'https://naver.com', 
+        randomImageUrl: 'https://picsum.photos/200', 
+      }
+    })
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // this is where I quit js (여기서 난 js를 때려쳤어)
+  // this => 무조건 어떤 object를 지칭
+
+  // method -> 객체안에 정의된 함수(객체.methodName()으로 실행하는 함수)
+  // function -> method가 아닌 모든 함수
+
+  // function() {} 정의할 때, this가 window가 아닌경우
+  // 1. method안의 this -> 해당 method가 정의된 객체(Object)
+  // 2. 생성자함수안의 this
+
+  // method를 정의할 때, 반드시 fucntion(){}로 정의한다.
+  const obj = {
+    name: 'obj', 
+    method1: function () {
+      console.log(this) // obj
+    },
+    objInObj: {
+      name:'oio', 
+      // oioMethod: function () {} -> 아래와 완선히 같음
+      oioMethod () { // ES6 Synthatic Sugar: 코드를 쉽고 짧게
+        console.log(this) //objInObj
+      }
+    },
+    //
+    arr: [0, 1, 2],
+    newArr: [],
+    method2 () {
+      console.log(this) // obj
+      this.arr.forEach(
+        /*
+        function(number) { //얘는 method가 아니므로 안됨
+          this.newArr.push(number * 100)
+        }.bind(this)
+        */
+       // 화살표함수는 위의 함수와 완전히 같지 않고 뒤의 bind를 줄여주기 위해서 사용한다.
+       (number) => {
+         this.newArr.push(number * 100)
+       }
+      )
+    }
+  }
+</script>  
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function adv</title>
+</head>
+<body>
+  <script>
+    // 1. default args
+    function defaultArgs(a=1, b=2) {
+      return a + b
+    }
+
+    defaultArgs()
+    defaultArgs(20, 30)
+
+    // 2. JS함수의 인자 개수
+    function wrongArgCount(a, b) {
+      console.log(a, b)
+    }
+
+    wrongArgCount()
+    wrongArgCount(1, 2, 3)
+
+    // 3. JS rest operator (그냥 나머지들)
+    function restOperator1(...numbers) {
+      console.log(numbers)
+    }
+
+    restOperator1(1, 2, 3, 4, 5)
+
+    function restOperator2(a, b, ...numbers) {
+      console.log(a, b, numbers)
+    }
+
+    restOperator2(1, 2, 3, 4, 5)
+
+    // 4. JS spread operator
+    function spreadOperator(a, b, c) {
+      console.log(a, b, c)    
+    }
+
+    let numbers = [1, 2, 3]
+    spreadOperator(numbers[0], numbers[1], numbers[2])
+    spreadOperator(...numbers) // 배열을 흩뿌려서 넣어 준다
+
+    // 배열 합치기
+    let newNumbers = [0, ...numbers, 5]
+    console.log(newNumbers)
+
+    // copy.copy
+    newNumbers = numbers // 이거는 포인터만 변경
+    newNumbers = [...numbers] // 이거는 1차원 카피
+
+  </script>
+  
+</body>
+</html>

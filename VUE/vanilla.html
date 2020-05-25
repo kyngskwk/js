@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="inputArea">Username:</label>
+  <input type="text" id='inputArea'>
+  <hr>
+  <h1>hello, <span id="username1"></span></h1>
+
+  <div>
+    <span id="username2"></span>님의 친구목록
+  </div>
+ 
+  <div>
+    <span id="username2"></span> 님의 알림목록
+  </div>
+ 
+  <div>
+    <span id="username2"></span> 님의 친구요청목록
+  </div>
+
+  <script>
+    const inputArea = document.querySelector('#inputArea')
+    const initText = 'Unknown'
+
+    const usrename1 = document.querySelector('#username1')
+    const usrename1 = document.querySelector('#username2')
+    const usrename1 = document.querySelector('#username3')
+    const usrename1 = document.querySelector('#username4')
+
+    username1.innerText = initText
+    username2.innerText = initText
+    username3.innerText = initText
+    username4.innerText = initText
+
+    inputArea.addEventListener('change', function (event) {
+      const inputText = event.target.value
+      username1.innerText = inputText
+      username2.innerText = inputText
+      username3.innerText = inputText
+      username4.innerText = inputText
+    })
+  </script>
+</body>
+</html>

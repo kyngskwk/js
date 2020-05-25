@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>event Listener</title>
+</head>
+<body>
+  <button id="myButton" onclick="confirmMessage()">얍</button>
+  <script>
+    const myButton = document.querySelector('#myButton')
+
+    function confirmMessage(event) {
+      confirm('얍?')
+    }
+
+    myButton.addEventListener('click', confirmMessage)
+    myButton.addEventListener('click', function(event) {
+      confirm('얍!')
+    })
+  </script>
+</body>
+</html>
