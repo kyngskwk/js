@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="visible = !visible">버어튼</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 3,
+      },
+      methods: {
+       decreaseCount : function () {
+         this.count = this.count - 1
+       }
+      },
+      computed: {
+        calculated: function () {
+          return this.count * 3
+        }
+      },
+      watch: {
+        // data의 count가 변경될 때 마다 해당함수가 실행
+        // 이때, 새로 변경된 count값이 함수의 인자로 전달된다.
+        count: function (newArgs) {
+          if (newArgs === 0) {
+            alert('the value of count is 0')
+            this.count = 3
+          }
+
+        }
+      }
+    })
+  </script>
+</body>
+</html>

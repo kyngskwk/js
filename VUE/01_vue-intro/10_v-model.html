@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <!-- v-model: input, select, textarea에서만 가능하다 -->
+    <!-- 해당태그에 양방향 바인딩이 가능하다. -->
+    <!-- 사용자의 입력과 데이터를 완전히 동기화 하고 싶다 -->
+
+    <hr>
+    <!-- 단방향 바인딩(input => data) -->
+    1-way
+    <input @keyup="onInputChange" type="text">
+
+    <hr>
+    <!-- 양방향바인딩(input <=> data) -->
+    2-way
+    <input @keyup="onInputChange" type="text" :value="message">
+
+    <hr>
+    <!-- v-model -->
+    2-way/Model
+    <input v-model="message" type="text">
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: { 
+        message: 'hi',
+      },
+      methods: {
+        onInputChange(event) {
+          this.message = event.target.value
+        }
+      }
+    })
+  </script>  
+</body>
+</html>

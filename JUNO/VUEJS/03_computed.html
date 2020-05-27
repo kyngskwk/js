@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>original message: {{ message }}</p>
+    <p>reversed message: {{ reversedMessage }}</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello, vue!',
+      },
+      // computed속성은 종속대상을 따라 저장(캐싱)된다.
+      // 해당 속성이 종속된 대상이 변경될 때에만 함수를 실행
+      // 만약 아무곳에도 의존하지 않는 computed속성의 경우 절대로 업데이트 되지 않는다.
+      computed: {
+        reversedMessage: function () {
+          return this.message.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
